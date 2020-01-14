@@ -63,7 +63,7 @@ function configurePushSub() {
     .then(function(sub) {
       if (sub === null) {
         // Create a new subscription
-        var vapidPublicKey = 'xxx';
+        var vapidPublicKey = 'BCuYsP7Sx-VVNkj-onUDio0w0UxKruPi6QmNLgQ0ljpLooNCdmpIM6gUsrSfJnqReav7ZxrBfbiEckMPWL8lW2s';
         var convertedVapidPublicKey = urlBase64ToUint8Array(vapidPublicKey);
         return reg.pushManager.subscribe({
           userVisibleOnly: true,
@@ -74,7 +74,7 @@ function configurePushSub() {
       }
     })
     .then(function(newSub) {
-      return fetch('https://tissue-6da74.firebaseio.com/subscriptions.json', {
+      return fetch('https://tissue-af652.firebaseio.com/subscriptions.json', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
