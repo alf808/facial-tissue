@@ -74,7 +74,7 @@ function isInArray(string, array) {
 
 self.addEventListener('fetch', function (event) {
 
-  var url = 'https://tissue-af652.firebaseio.com/posts';
+  var url = 'https://tissue.firebaseio.com/posts';
   if (event.request.url.indexOf(url) > -1) {
     event.respondWith(fetch(event.request)
       .then(function (res) {
@@ -195,7 +195,7 @@ self.addEventListener('sync', function(event) {
             postData.append('location', dt.location);
             postData.append('file', dt.picture, dt.id + '.png');
 
-            fetch('https://us-central1-tissue-af652.cloudfunctions.net/storePostData', {
+            fetch('https://us-central1-tissue.cloudfunctions.net/storePostData', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
